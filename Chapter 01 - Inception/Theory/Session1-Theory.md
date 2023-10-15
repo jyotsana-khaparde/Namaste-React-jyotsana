@@ -9,11 +9,27 @@ A: `Emmet` is the essential toolkit for web-developers. It allows you to `type s
 A: A `library` is a collection of packages that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
 The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
 
+## Q: What is `CDN react` links?
+A: CDN links (for react) are the links of the website where react is hosted and we can just pull react from there into our project. so basically it is a place where react library is hosted so we can fetch that react put that in our code using CDN links. eg- 
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 ## Q: What is `CDN`? Why do we use it?
 A: A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
 The main use of a CDN is to deliver content through a network of servers in a secure and efficient way.
 
+## Q: What is `React.createElement(), ReactDOM.createRoot(), root.render()`?
+A: `React.createElement():-` createElement lets you create a React element. It serves as an alternative to writing JSX. 
+eg: const element = React.createElement(type, props/attribute, children)
+the "element" variable basically contain the object which has all the information related to the React element.
+eg: const element = React.createElement(type, props/attribute, [sibling1, sibling2])
+If we want 2 elements as siblings then we have to put it in array.
+
+`ReactDOM.createRoot():-` createRoot lets you create a root to display React components inside a browser DOM node.
+eg: const root = ReactDOM.createRoot(domNode, options?)
+
+`root.render():-` Call root.render to display a piece of JSX (“React node”) into the React root’s browser DOM node.React will display <App /> in the root, and take over managing the DOM inside it
+eg: root.render(<App />);
 
 ## Q: Why is `React known as React`?
 A: `React` is named React because of its ability to `react to changes in data`.

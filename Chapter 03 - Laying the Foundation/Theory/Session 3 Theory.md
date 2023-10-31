@@ -2,10 +2,16 @@
 # Chapter 03 - Laying the Foundation
 
 ## Q: What is `JSX`?
-A: JSX stands for JavaScript XML.
-JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.
-JSX makes it easier to write and add HTML in React.
-JSX converts HTML tags into react elements.
+A: 
+- JSX stands for JavaScript XML.
+- JSX allows us to write HTML elements in JavaScript and place them in the DOM without any React.createElement() and/or appendChild() methods.
+- JSX makes it easier to write and add HTML in React.
+- JSX converts HTML tags into react elements.
+- JSX is not HTML in JS. you can say - It's HTML-like or XML-like syntax.
+- If we want to give attribute to JSX we have to use camelCase
+- In normal HTMl we write class="test" but in JSX we write className="test"
+- JSX prevent Cross Site Scripting attack for us.
+
 
 ### Example 1 using JSX:
 ```
@@ -60,3 +66,29 @@ A component is written inside the `{<  />}` expression.
     <ThirdChildComponent />
 </TitleComponent>
 ```
+
+## Q: How to make shortcut for the script we write to run the project?
+A: We add command in `scripts` inside package.json 
+eg: we write `npx parcel index.html` to run the project in development mode. instead of writing this we can create a script/shortcut.
+
+"scripts": {
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
+}
+
+And then we can use it like: `npm run start` also instead of this we can also write `npm start` to run the project. hence `npm run start` === `npm start`. but we can't use prod build script without run eg `npm run build` !== `npm build`
+
+Note:- React.createElement is => ReactElement => JS Object => that becomes HTML element while rendering.
+
+## Q: Is browser understands JSX?
+A: Browser doesn't understand JSX, the JSX code is transpiled before it reachs the JS engine. transpilation is done by PARCEL and the parcel doesn't do it by itself it's done by Bable. when we install Parcel, the parcel also install babel as it's dependencies.
+
+JSX (Bable transpiled before it reachs the JS engine) => parcel => Babel
+
+JSX => Bable transpiled it to React.createElement => ReactElement wihch is eventually => JS Object => HTML element (render)
+
+## Q: What is functional component?
+A: This is normal js functions that returns a pice of JSX. The component name always starts with a capital letter.
+
+## Q: What is component composition?
+A: When we composite 2 components one in another. or calling one component in another component.

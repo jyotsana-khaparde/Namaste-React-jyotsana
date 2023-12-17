@@ -68,6 +68,15 @@ return (
     );
 ```
 
+- whenever the state variable updates, the react renderers the component. that means, as soon as data layer will update the UI layer will update.
+
+## Q: Why react is fast?
+A: 
+- Because react is doing efficient DOM manipulation becase it has the virtual DOM. in short, react can efficiently find out the difference between virtual DOM and update the actual DOM.
+- The process is called Reconciliation is also known as react fiber. in react 16 the new way of finding the diff and upadting the DOM came that's known as react fiber and it use diff algorithm.
+- `Diffing algorithm` find the difference between updated virtual DOM and previous virtual DOM. it will then calculate the difference and update the actual DOM on every render cycle.
+- Virtual DOM is representation of actual DOM. it is actually an object so it is kind of object representation of DOM. 
+
 
 ## Q: What is `Reconciliation` in React?
 A: `Reconciliation` is the process through which React updates the Browser DOM and makes React work faster. React use a `diffing algorithm` so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) when there's an update of components.
@@ -98,6 +107,7 @@ Keys should be given to the elements within the array to give the elements a sta
 ## Q: Can we use `index as keys` in React?
 A: Yes, we can use the `index as keys`, but it is not considered as a good practice to use them because if the order of items may change. This can negatively impact performance and may cause issues with component state.
 Keys are taken from each object which is being rendered. There might be a possibility that if we modify the incoming data react may render them in unusual order.
+https://www.youtube.com/watch?v=xlPxnc5uUPQ&t=2s 
 
 
 ## Q: What is `props in React`? Ways to.

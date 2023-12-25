@@ -25,7 +25,7 @@ With a `microservices architecture`, an application is built as independent comp
 
 ## Q: Why do we need a `useEffect Hook`?
 A: `useEffect Hook` is javascript function provided by `react`. The useEffect Hook allows you to  `eliminate side effects` in your components. Some examples of side effects are: `fetching API data`, `directly updating the DOM`, and `setting up subscriptions or timers`, etc can be lead to unwarranted side-effects.
-useEffect accepts `two arguments`, a `callback function` and a `dependency array`. The second argument is optional.
+useEffect accepts `two arguments`, a `callback function` and a `dependency array`. The second argument is optional. this `useEffect` is called just after the component is rendered.
 
 ```
 useEffect(() => {}, [])
@@ -89,8 +89,9 @@ A: `Conditional rendering` in React works the same way conditions work in `JavaS
 
 
 ## Q: What is `CORS`?
-A: Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
-CORS defines a way in which a browser and server can interact to determine whether it is safe to allow the cross-origin request.
+A: - Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+- CORS defines a way in which a browser and server can interact to determine whether it is safe to allow the cross-origin request.
+- our browser does not allow us to call from one origin to another origin so if there is a mismatch, the browser blocks the API call. that is CORS policy.
 
 
 ## Q: What is `async and await`?
@@ -115,3 +116,23 @@ A: The `data` object, returned by the `await fetch()`, is a generic placeholder 
 so we can extract the `JSON object` from a `fetch` response by using `await data.json()`.
 `data.json()` is a method on the data object that lets you extract a `JSON object` from the data or response. The method returns a promise because we have used `await` keyword.
 so `data.json()` returns a promise resolved to a `JSON object`.
+
+## Q: What are the approaches to render the dats on UI?
+A: 
+1. ASA Page loads -> API call -> Render the data
+2. ASA Page loads -> Render the skeleton -> API call -> Re-render the data
+
+## Q: Why do we need state variables?
+A: 
+- When we have normal js variable and when we try to change that variable then JS varible is updated but there is no way for react to track wether that variable is changed ot not.
+- But when we use state variables and change the state then on every change react will rerender the component. and all the updated value shows on UI.
+- Whenever state variable update, react triggers a reconciliation cycle (re-render the component)
+
+## Q: Alternative of CORS plugin to resolve cross origin issues.
+A: We cna use Free CORS Proxy Servers
+1. CorsProxy.io
+CorsProxy.io offers a free and convenient proxy to solve CORS errors. All you need to do to use the service is to insert the proxy URL https://corsproxy.io/ as a prefix before the destination URL, and it will call the URL on behalf of your application using the proper CORS headers. Here is some JavaScript code to implement it.
+
+const url = 'https://corsproxy.io/?' + encodeURIComponent('https://api.domain.com/...');
+2. CORS.SH
+CORS.SH offers a reliable CORS proxy with a fast response time. You can request an API key and then use the CORS proxy by simply adding https://proxy.cors.sh/ to your existing API. The service also offers a web-based playground. Unfortunately for some developers, free usage of CORS.SH is limited to public projects that are on GitHub.

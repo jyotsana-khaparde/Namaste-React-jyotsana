@@ -62,3 +62,14 @@ A: `Single Page Application (SPA)` is a web application that dynamically updates
 A: In `Server-side routing or rendering (SSR)`, every change in URL, http request is made to server to fetch the webpage, and replace the current webpage with the older one. 
 
 In `Client-side routing or rendering (CSR)`, during the first load, the webapp is loaded from server to client, after which whenever there is a change in URL, the router library navigates the user to the new page without sending any request to backend. All `Single Page Applications uses client-side routing`. 
+
+## Q: What is useRouteError in react-router-dom?
+A: It's the hook provided by "react-router-dom" It returns the nearest ancestor Route error, which could be a loader/action error or a render error. This is intended to be called from your ErrorBoundary/errorElement to display a proper error message.
+
+## Q: Why we should not use anchors tag to route to another page?
+A: We shpuld never use <a href=""> tag to redirect to another page as it refresh the whole page.
+You can nevigate to another page without reloading the whole page by using <Link> provided by `react-router-dom` library and it works same as <a> tag. the only difference is that in <a> tag we use `href` and in <Link> tag we use `to`.
+<a href="/xyz">About</a>
+<Link href="/xyz">About</Link>
+
+

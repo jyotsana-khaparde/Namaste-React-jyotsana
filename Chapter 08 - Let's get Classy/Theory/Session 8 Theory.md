@@ -1,6 +1,8 @@
 ## Namaste React Course by Akshay Saini
 # Chapter 08 - Let's get Classy
 
+## Q: Life Cycle diagram
+A: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ 
 
 ## Q: How do you create `Nested Routes` react-router-dom configuration?
 A: We can create a `Nested Routes` inside a react router configuration as follows:
@@ -67,7 +69,7 @@ For more reference [React-Lifecycle-methods-Diagram](https://projects.wojtekmaj.
 
 ## Q: Why do we use `componentDidMount`?
 A: The `componentDidMount()` method allows us to execute the React code when the component is already placed in the DOM (Document Object Model). This method is called during the Mounting phase of the React Life-cycle i.e after the component is rendered.
-Wwe can run any piece of react code to modify the components. For ex. It's the best place to `make API calls`.
+we can run any piece of react code to modify the components. For ex. It's the best place to `make API calls`.
 
 
 ## Q: Why do we use `componentWillUnmount`? Show with example.
